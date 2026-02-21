@@ -1,0 +1,89 @@
+.attendance-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  animation: fadeInUp 0.35s ease-out both;
+  transition: background 0.2s ease;
+}
+
+.attendance-row:last-child {
+  border-bottom: none;
+}
+
+.attendance-row:hover {
+  background: var(--bg-card-hover);
+}
+
+.attendance-row__name {
+  font-weight: 500;
+  font-size: 0.98rem;
+}
+
+.attendance-row__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.attendance-row__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+.attendance-row__btn:hover {
+  color: var(--text);
+  background: var(--bg-card-hover);
+}
+
+.attendance-row__btn--present:hover {
+  border-color: rgba(0, 212, 170, 0.4);
+  color: var(--present);
+}
+
+.attendance-row__btn--absent:hover {
+  border-color: rgba(255, 107, 107, 0.4);
+  color: var(--absent);
+}
+
+.attendance-row__btn--present.attendance-row__btn--active {
+  background: var(--accent-dim);
+  border-color: var(--present);
+  color: var(--present);
+}
+
+.attendance-row__btn--absent.attendance-row__btn--active {
+  background: var(--danger-dim);
+  border-color: var(--absent);
+  color: var(--absent);
+}
+
+.attendance-row__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attendance-row__check-path {
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.attendance-row__btn--present.attendance-row__btn--active .attendance-row__check-path {
+  animation: checkmark 0.35s ease-out forwards;
+}
+
+.attendance-row__cross {
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-top: -1px;
+}

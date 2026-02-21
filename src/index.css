@@ -1,0 +1,130 @@
+:root,
+[data-theme="dark"] {
+  --bg-dark: #0f0f14;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f0f0f5;
+  --text-muted: #8b8b9e;
+  --accent: #00d4aa;
+  --accent-dim: rgba(0, 212, 170, 0.25);
+  --accent-glow: rgba(0, 212, 170, 0.4);
+  --danger: #ff6b6b;
+  --danger-dim: rgba(255, 107, 107, 0.2);
+  --present: #00d4aa;
+  --absent: #ff6b6b;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --font: 'Outfit', system-ui, sans-serif;
+}
+
+[data-theme="light"] {
+  --bg-dark: #f5f5f8;
+  --bg-card: rgba(0, 0, 0, 0.04);
+  --bg-card-hover: rgba(0, 0, 0, 0.07);
+  --border: rgba(0, 0, 0, 0.1);
+  --text: #1a1a24;
+  --text-muted: #5c5c6e;
+  --accent: #00a88a;
+  --accent-dim: rgba(0, 168, 138, 0.2);
+  --accent-glow: rgba(0, 168, 138, 0.35);
+  --danger: #e05555;
+  --danger-dim: rgba(224, 85, 85, 0.15);
+  --present: #00a88a;
+  --absent: #e05555;
+}
+
+[data-theme="light"] .app-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 168, 138, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(100, 80, 255, 0.06), transparent),
+    radial-gradient(ellipse 50% 30% at 0% 80%, rgba(0, 168, 138, 0.08), transparent);
+}
+
+[data-theme="light"] .tab--active {
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg-dark);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Background mesh */
+.app-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 212, 170, 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(100, 80, 255, 0.08), transparent),
+    radial-gradient(ellipse 50% 30% at 0% 80%, rgba(0, 212, 170, 0.06), transparent);
+  pointer-events: none;
+}
+
+/* Stagger animation helper */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 35px var(--accent-glow); }
+}
+
+@keyframes checkmark {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+button {
+  font-family: var(--font);
+  cursor: pointer;
+}
+
+input {
+  font-family: var(--font);
+}

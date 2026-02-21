@@ -1,0 +1,106 @@
+.student-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.student-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  animation: fadeInUp 0.4s ease-out both;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.student-list__item:hover {
+  background: var(--bg-card-hover);
+}
+
+.student-list__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.student-list__name {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.student-list__pct {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.student-list__pct--good {
+  color: var(--present);
+}
+
+.student-list__pct--low {
+  color: var(--absent);
+}
+
+.student-list__remove {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.student-list__remove:hover {
+  color: var(--danger);
+  background: var(--danger-dim);
+  border-color: rgba(255, 107, 107, 0.3);
+  transform: scale(1.05);
+}
+
+.student-list__remove:active {
+  transform: scale(0.98);
+}
+
+.student-list__remove-icon {
+  margin-top: -2px;
+}
+
+/* Empty state */
+.student-list--empty {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  animation: scaleIn 0.5s ease-out;
+}
+
+.student-list__empty-icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+}
+
+.student-list__empty-text {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.student-list__empty-hint {
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

@@ -1,0 +1,145 @@
+.app {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.header-title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.header-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background: linear-gradient(135deg, var(--accent), #00a88a);
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--bg-dark);
+  box-shadow: 0 4px 20px var(--accent-glow);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.header-sub {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.header-btn {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.header-btn:hover {
+  color: var(--text);
+  background: var(--bg-card-hover);
+}
+
+.header-btn--danger {
+  color: var(--danger);
+  border-color: rgba(255, 107, 107, 0.4);
+}
+
+.header-btn--danger:hover {
+  background: var(--danger-dim);
+}
+
+.theme-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0.25rem;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+.tab:hover {
+  color: var(--text);
+  background: var(--bg-card-hover);
+}
+
+.tab--active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main {
+  animation: fadeInUp 0.5s ease-out 0.15s both;
+}
+
+/* Tab content switch */
+.section {
+  animation: scaleIn 0.35s ease-out;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section--students {
+  gap: 1.75rem;
+}
+
+.section--attendance {
+  gap: 1.75rem;
+}
